@@ -30,5 +30,24 @@ class linkedList:
         while curr!=None:
             print(curr.data)
             curr=curr.next
-            
+    
+    def delFromBeginning(self):
+        if self.head==None:
+                raise Exception("Empty Linked List")
+            else:
+                temp=self.head
+                self.head=self.head.next
+                del temp
+                
+    def delFromEnd(self):
+        if self.head==None:
+                raise Exception("Empty Linked List")
+            else:
+                curr=self.head
+                prev=None
+                while curr.next!=None:
+                    prev=curr
+                    curr=curr.next
+                prev.next=curr.next
+                del curr
             
